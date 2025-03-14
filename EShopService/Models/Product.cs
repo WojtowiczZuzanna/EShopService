@@ -5,11 +5,11 @@ namespace EShopService.Models
 {
     public class Product : BaseModel
     {
-        public string ean { get; set; }
-        public decimal price { get; set; }
-        public int stock { get; set; }
-        public string sku { get; set; }
-        public Category category { get; set; }
+        public string Ean { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+        public string Sku { get; set; }
+        public Category Category { get; set; }
 
 
     }

@@ -4,7 +4,7 @@ namespace EShopService.Models
 {
     public class Category : BaseModel
     {
-        public int id { get; set; }
-        public string name { get; set; } = default;
+        public int Id { get; set; }
+        public string Name { get; set; } = default;
     }
 }

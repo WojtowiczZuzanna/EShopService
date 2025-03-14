@@ -4,10 +4,10 @@ namespace EShopService.Models
 {
     public class BaseModel
     {
-        public bool deleted { get; set; }
-        public DateTime created_at { get; set; } = DateTime.UtcNow;
-        public Guid created_by { get; set; }
-        public DateTime updated_at { get; set; } = DateTime.UtcNow;
-        public Guid updated_by { get; set; }
+        public bool Deleted { get; set; }
+        public DateTime Created_at { get; set; } = DateTime.UtcNow;
+        public Guid Created_by { get; set; }
+        public DateTime Updated_at { get; set; } = DateTime.UtcNow;
+        public Guid Updated_by { get; set; }
     }
 }
