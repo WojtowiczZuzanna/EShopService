@@ -4,10 +4,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopService", "EShopService\EShopService.csproj", "{4536F3B7-E6B6-404C-89A9-1312F59B35E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11150EBE-534D-4A59-B92C-ABC40621D87D} = {11150EBE-534D-4A59-B92C-ABC40621D87D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Application", "EShop.Application\EShop.Application.csproj", "{05C26FF4-9F98-4807-9898-DEEA4A355D90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Application", "EShop.Application\EShop.Application.csproj", "{05C26FF4-9F98-4807-9898-DEEA4A355D90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11150EBE-534D-4A59-B92C-ABC40621D87D} = {11150EBE-534D-4A59-B92C-ABC40621D87D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Application.Test", "EShop.Application.Test\EShop.Application.Test.csproj", "{D31C12C9-75CD-4D7F-A97F-CF943D4AE6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Application.Test", "EShop.Application.Test\EShop.Application.Test.csproj", "{D31C12C9-75CD-4D7F-A97F-CF943D4AE6C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11150EBE-534D-4A59-B92C-ABC40621D87D} = {11150EBE-534D-4A59-B92C-ABC40621D87D}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Domain", "EShop.Domain\EShop.Domain.csproj", "{89D431EB-741B-4811-89B5-82811D143AFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05C26FF4-9F98-4807-9898-DEEA4A355D90} = {05C26FF4-9F98-4807-9898-DEEA4A355D90}
+		{11150EBE-534D-4A59-B92C-ABC40621D87D} = {11150EBE-534D-4A59-B92C-ABC40621D87D}
+		{4536F3B7-E6B6-404C-89A9-1312F59B35E2} = {4536F3B7-E6B6-404C-89A9-1312F59B35E2}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShop.Domain.Tests", "EShop.Domain.Tests\EShop.Domain.Tests.csproj", "{11150EBE-534D-4A59-B92C-ABC40621D87D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{192FBB90-05A4-4987-964F-4F7DE244F383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +47,14 @@ Global
 		{D31C12C9-75CD-4D7F-A97F-CF943D4AE6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31C12C9-75CD-4D7F-A97F-CF943D4AE6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31C12C9-75CD-4D7F-A97F-CF943D4AE6C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D431EB-741B-4811-89B5-82811D143AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D431EB-741B-4811-89B5-82811D143AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D431EB-741B-4811-89B5-82811D143AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D431EB-741B-4811-89B5-82811D143AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11150EBE-534D-4A59-B92C-ABC40621D87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11150EBE-534D-4A59-B92C-ABC40621D87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11150EBE-534D-4A59-B92C-ABC40621D87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11150EBE-534D-4A59-B92C-ABC40621D87D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
