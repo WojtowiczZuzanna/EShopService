@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace EShopService.Models
+namespace EShop.Domain.Models
 {
     public class BaseModel
     {

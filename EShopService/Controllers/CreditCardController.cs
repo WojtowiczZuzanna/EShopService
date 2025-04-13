@@ -10,11 +10,11 @@ namespace EShopService.Controllers;
 [ApiController]
 public class CreditCardController : ControllerBase
 {
-    private readonly CreditCardService _creditCardService;
+    protected ICreditCardService _creditCardService;
 
-    public CreditCardController()
+    public CreditCardController(ICreditCardService creditCardService)
     {
-        _creditCardService = new CreditCardService();
+        _creditCardService = creditCardService;
     }
 
     [HttpPost]

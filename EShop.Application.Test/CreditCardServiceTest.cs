@@ -10,7 +10,7 @@ public class CreditCardServiceTest
     [InlineData("345-470-784-783-010", true)]
     public void CreditCard_CorrectLength_ShouldReturnTrue(string cardNumber, bool expected)
     {
-        var creditCardService = new CreditCardService();
+        var creditCardService = new ICreditCardService();
 
         var result = creditCardService.ValidateCard(cardNumber);
         Assert.Equal(expected, result);
@@ -22,7 +22,7 @@ public class CreditCardServiceTest
     [InlineData("345-470-784-783-010-123-456")]
     public void CreditCard_TooLong_ShouldThrowException(string cardNumber)
     {
-        var creditCardService = new CreditCardService();
+        var creditCardService = new ICreditCardService();
         var result = creditCardService.ValidateCard(cardNumber);
         Assert.False(result);
     }
@@ -33,7 +33,7 @@ public class CreditCardServiceTest
     [InlineData("123")]
     public void CreditCard_TooShort_ShouldThrowException(string cardNumber)
     {
-        var creditCardService = new CreditCardService();
+        var creditCardService = new ICreditCardService();
         var result = creditCardService.ValidateCard(cardNumber);
         Assert.False(result);
     }
@@ -43,7 +43,7 @@ public class CreditCardServiceTest
     [InlineData("1234 5678 9012 345")] 
     public void CreditCard_InvalidSum_ShouldThrowException(string cardNumber)
     {
-        var creditCardService = new CreditCardService();
+        var creditCardService = new ICreditCardService();
         var result = creditCardService.ValidateCard(cardNumber);
         Assert.False(result);
     }
@@ -62,7 +62,7 @@ public class CreditCardServiceTest
 
     public void CreditCard_CorrectType_ReturnTrue(string cardNumber, string expectedProvider)
     {
-        var creditCardService = new CreditCardService();
+        var creditCardService = new ICreditCardService();
         var result = creditCardService.GetCardType(cardNumber);
         Assert.Equal(expectedProvider, result);
     }
