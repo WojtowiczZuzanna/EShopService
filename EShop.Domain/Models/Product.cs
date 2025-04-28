@@ -7,39 +7,35 @@ namespace EShop.Domain.Models
     [Table("Products")]
     public class Product : BaseModel
     {
-        [Required]
-        [Column("Id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
 
         [Required]
         [Column ("Name", TypeName = "varchar(50)")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
-
-        [Required]
+        
         [Column("Ean", TypeName = "varchar(50)")]
         public string Ean { get; set; }
         
         
-        [Required]
-        [Column("Price)", TypeName = "decimal(5,2)")]
+        [Column("Price", TypeName = "decimal(5,2)")]
         public decimal Price { get; set; }
 
         
-        [Required]
         [Column("Stock")]
         public int Stock { get; set; } = 0;
 
-        
-        [Required]
+
         [Column("Sku", TypeName = "varchar(50)")]
         public string Sku { get; set; }
 
-        
-        [ForeignKey("Category")]
-        public Category Category { get; set; } = default;
+        [ForeignKey("CategoryId")]
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; } = default;
 
+        public bool Deleted { get; set; } = false;
 
     }
 }

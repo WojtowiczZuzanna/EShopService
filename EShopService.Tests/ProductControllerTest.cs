@@ -81,7 +81,7 @@ public class ProductControllerTest
     {
         var product = new Product { Id = 1 };
 
-        _mockService.Setup(s => s.Add(It.IsAny<Product>())).ReturnsAsync(product);
+        _mockService.Setup(s => s.AddAsync(It.IsAny<Product>())).ReturnsAsync(product);
 
         var result = await _controller.Post(product);
 
@@ -95,7 +95,7 @@ public class ProductControllerTest
     {
         var product = new Product { Id = 1, Price = 100 };
 
-        _mockService.Setup(u => u.Update(It.IsAny<Product>())).ReturnsAsync(product);
+        _mockService.Setup(u => u.UpdateAsync(It.IsAny<Product>())).ReturnsAsync(product);
 
         var result = await _controller.Put(1, product);
 
@@ -112,7 +112,7 @@ public class ProductControllerTest
         var product = new Product { Id = 1, Deleted = false };
 
         _mockService.Setup(d => d.GetAsync(1)).ReturnsAsync(product);
-        _mockService.Setup(d => d.Update(It.Is<Product>(p => p.Deleted))).ReturnsAsync(product);
+        _mockService.Setup(d => d.UpdateAsync(It.Is<Product>(p => p.Deleted))).ReturnsAsync(product);
 
         var result = await _controller.Delete(1);
 

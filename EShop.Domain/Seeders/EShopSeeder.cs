@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using EShop.Domain.Models;
+using EShop.Domain.Repositories;
 
 
 namespace EShop.Domain.Seeders;
 
-public class EShopSeeder(DbContext context) : IEShopSeeder
+public class EShopSeeder(DataContext context) : IEShopSeeder
 {
     public async Task Seed()
     {
@@ -24,6 +25,7 @@ public class EShopSeeder(DbContext context) : IEShopSeeder
             {
                 new Product
                 {
+                    Name = "Product1",
                     Ean = "1111111111111",
                     Price = 10,
                     Stock = 10,
@@ -32,6 +34,7 @@ public class EShopSeeder(DbContext context) : IEShopSeeder
                 },
                 new Product
                 {
+                    Name = "Product2",
                     Ean = "2222222222222",
                     Price = 20,
                     Stock = 20,
@@ -40,6 +43,7 @@ public class EShopSeeder(DbContext context) : IEShopSeeder
                 },
                 new Product
                 {
+                    Name = "Product3",
                     Ean = "3333333333333",
                     Price = 30,
                     Stock = 3,
