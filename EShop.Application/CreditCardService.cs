@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using EShop.Domain.Exceptions;
+using System.Text.RegularExpressions;
 
 namespace EShop.Application;
 
@@ -9,9 +10,13 @@ public class CreditCardService : ICreditCardService
     {
         cardNumber = cardNumber.Replace(" ", "").Replace("-","");
         if (!cardNumber.All(char.IsDigit))
-            return false;
-        if (cardNumber.Length > 19 || cardNumber.Length < 13)
-            return false;
+            throw new CardNumberInvalidException("Card number must contain only digits.");
+
+        if (cardNumber.Length > 19)
+            throw new CardNumberTooLongException("Card number is too long.");
+
+        if (cardNumber.Length < 13)
+            throw new CardNumberTooShortException("Card number is too short.");
 
         int sum = 0;
         bool alternate = false;
@@ -31,7 +36,10 @@ public class CreditCardService : ICreditCardService
             alternate = !alternate;
         }
 
-        return (sum % 10 == 0);
+        if (sum % 10 != 0)
+            throw new CardNumberInvalidException("Card number is invalid.");
+
+        return true;
     }
 
 
@@ -59,7 +67,7 @@ public class CreditCardService : ICreditCardService
         if (Regex.IsMatch(cardNumber, @"^(50|5[6-9]|6\d)\d{10,17}$"))
             return "Maestro";
 
-        else return "False";
+        else throw new NotSupportedException("Card provider not supported.");
     }
 
 }

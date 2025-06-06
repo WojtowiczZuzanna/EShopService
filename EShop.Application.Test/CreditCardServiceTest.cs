@@ -1,5 +1,4 @@
 using EShop.Domain.Exceptions;
-using EShop.Application;
 
 namespace EShop.Application.Test;
 

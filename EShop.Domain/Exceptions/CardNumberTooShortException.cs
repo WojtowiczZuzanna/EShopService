@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EShop.Domain.Exceptions;
 
-namespace EShop.Domain.Exceptions;
-
-public class CardNumberInvalidException : Exception
+public class CardNumberTooShortException : Exception
 {
-    public CardNumberInvalidException() { }
+    public CardNumberTooShortException()
+        : base("Card number is too long.") { }
 
-    public CardNumberInvalidException(string message) : base("Card Number is not valid.") { }
+    public CardNumberTooShortException(string message)
+        : base(message) { }
 
-    public CardNumberInvalidException(string message, Exception innerException) : base(message, innerException) { }
+    public CardNumberTooShortException(string message, Exception innerException)
+        : base(message, innerException) { }
 }

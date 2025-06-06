@@ -1,10 +1,13 @@
 ﻿namespace EShop.Domain.Exceptions;
 
-public class CardNumberTooLongException : Exception
+public class CardNumberInvalidException : Exception
 {
-    public CardNumberTooLongException() { }
-    
-    public CardNumberTooLongException(string message) : base("Card Number is too long.") { }
+    public CardNumberInvalidException()
+        : base("Card number is too long.") { }
 
-    public CardNumberTooLongException(string message, Exception innerException) : base(message, innerException) { }
+    public CardNumberInvalidException(string message)
+        : base(message) { }
+
+    public CardNumberInvalidException(string message, Exception innerException)
+        : base(message, innerException) { }
 }
